@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySqlConnector;
 
 namespace StorePasswdAsHash
 {
-    internal class Program
+    internal class Connection
     {
-        static void Main(string[] args)
-        {
+        private string _sqlStatement;
+        MySqlConnector dbconnet;
+        public Connection() 
+        { 
 
         }
+        
     }
 }
