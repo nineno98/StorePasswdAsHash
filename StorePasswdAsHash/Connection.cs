@@ -9,12 +9,21 @@ namespace StorePasswdAsHash
 {
     internal class Connection
     {
-        private string _sqlStatement;
-        
+        private string _sqlStatement, connstring;
+        MySqlConnection dbconn;
         public Connection() 
-        { 
-
+        {
+            Initialize();
         }
-        
+
+        private void Initialize()
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "localhost";
+            builder.Database = "";
+            builder.UserID = "root";
+            builder.Password = "";
+            
+        }
     }
 }
