@@ -10,7 +10,13 @@ namespace StorePasswdAsHash
     {
         static void Main(string[] args)
         {
+            GenerateHash generateHash = new GenerateHash();
+            byte[] salt = generateHash.GenerateSaltValue(12);
+            Console.WriteLine(Convert.ToBase64String(salt));
 
+
+
+            Console.ReadKey();
         }
     }
 }
