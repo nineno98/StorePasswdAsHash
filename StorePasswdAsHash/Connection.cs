@@ -10,7 +10,7 @@ namespace StorePasswdAsHash
     internal class Connection
     {
         private string _sqlStatement;
-        MySqlConnector dbconnet;
+        
         public Connection() 
         { 
 

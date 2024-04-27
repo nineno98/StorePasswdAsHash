@@ -14,7 +14,7 @@ namespace StorePasswdAsHash
 
         }
 
-        public byte[] GenerateHashValue(byte[] passwd, byte[] salt)
+        public string GenerateHashValue(byte[] passwd, byte[] salt)
         {
             
             HashAlgorithm hashAlgorithm = new SHA256Managed();
@@ -28,7 +28,7 @@ namespace StorePasswdAsHash
                 result[passwd.Length + i] = salt[i];
             }
 
-            return hashAlgorithm.ComputeHash(result);
+            return hashAlgorithm.ComputeHash(result).ToString();
 
         }
 
