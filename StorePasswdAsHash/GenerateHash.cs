@@ -17,13 +17,15 @@ namespace StorePasswdAsHash
         public byte[] GenerateHashValue(byte[] passwd, byte[] salt)
         {
 
-
+            byte[] result;
             using (HMACSHA256 hamacs = new HMACSHA256())
             {
-                hamacs.Key;
+                hamacs.Key = salt;
+                result = hamacs.ComputeHash(passwd);
 
             }
-            HashAlgorithm hashAlgorithm = new SHA256Managed();
+            return result;
+            /*HashAlgorithm hashAlgorithm = new SHA256Managed();
             byte[] result = new byte[passwd.Length + salt.Length];
             for (int i = 0; i < passwd.Length; i++)
             {
@@ -34,7 +36,7 @@ namespace StorePasswdAsHash
                 result[passwd.Length + i] = salt[i];
             }
 
-            return hashAlgorithm.ComputeHash(result);
+            return hashAlgorithm.ComputeHash(result);*/
 
         }
 

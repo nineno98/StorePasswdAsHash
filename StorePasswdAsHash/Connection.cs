@@ -20,7 +20,7 @@ namespace StorePasswdAsHash
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
-            builder.Database = "";
+            builder.Database = "hashedpasswd_test";
             builder.UserID = "root";
             builder.Password = "";
             

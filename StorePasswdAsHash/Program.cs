@@ -16,14 +16,15 @@ namespace StorePasswdAsHash
 
             string passwd = "almakorte";
 
-            string salt_1 = Convert.ToBase64String(salt);
+            
             string hashed = Convert.ToBase64String(generateHash.GenerateHashValue(Encoding.UTF8.GetBytes(passwd), salt));
 
-            Console.WriteLine(hashed);
+            Console.WriteLine(Convert.ToBase64String(generateHash.GenerateHashValue(Encoding.UTF8.GetBytes(passwd), salt)));
+            Console.WriteLine(Convert.ToBase64String(generateHash.GenerateHashValue(Encoding.UTF8.GetBytes(passwd), salt)));
+            Console.WriteLine(generateHash.GenerateHashValue(Encoding.UTF8.GetBytes(passwd), salt).Length);
+            Console.WriteLine(salt.Length);
 
-            string hashed_2 = Convert.ToBase64String(generateHash.GenerateHashValue(Encoding.UTF8.GetBytes((passwd)), Encoding.UTF8.GetBytes(salt_1)));
 
-            Console.WriteLine(hashed_2);
             Console.ReadKey();
         }
     }
